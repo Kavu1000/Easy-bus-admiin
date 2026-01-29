@@ -269,6 +269,8 @@ p {
 /* ===== Tables ===== */
 .table-container {
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
 }
@@ -282,6 +284,9 @@ p {
 .table thead {
   background: var(--color-bg-tertiary);
   border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .table th {
@@ -290,6 +295,7 @@ p {
   font-weight: 600;
   color: var(--color-text-primary);
   white-space: nowrap;
+  background: var(--color-bg-tertiary);
 }
 
 .table td {
