@@ -1,21 +1,17 @@
-import Sidebar from './Sidebar';
-import './DashboardLayout.css';
+
+import MainLayout from './MainLayout';
 
 const DashboardLayout = ({ children, title }) => {
     return (
-        <div className="dashboard-layout">
-            <Sidebar />
-            <main className="main-content">
-                {title && (
-                    <div className="page-header">
-                        <h1 className="page-title">{title}</h1>
-                    </div>
-                )}
-                <div className="page-content">
-                    {children}
-                </div>
-            </main>
-        </div>
+        <MainLayout>
+            {/* If the old layout displayed the title, we can optionally display it here, 
+                but our new pages handle their own headers. 
+                For compatibility, we just render children. 
+                If you want to show the title, uncomment the line below:
+                {title && <h1 className="text-2xl font-bold text-gray-900 mb-6">{title}</h1>}
+            */}
+            {children}
+        </MainLayout>
     );
 };
 
